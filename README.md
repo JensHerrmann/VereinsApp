@@ -84,7 +84,7 @@ Beitrag
 | id | Verein | HeimatVerein |
 |-|-|-|
 1 | PSG | Ja | 
-2 | Köln | Süd | null | 
+2 | Köln Süd | null | 
 
 ### Tabelle Mitglieder
 | id | Verein | Mitglied | Beitrag | Schrank |
