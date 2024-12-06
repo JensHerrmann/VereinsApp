@@ -50,6 +50,7 @@ CREATE TABLE Verzehr_History
 	FullName VARCHAR(64),
 	FK_Produkt INT FOREIGN KEY
 	REFERENCES Produkte(Id), 
+	Produkt varchar(64),
 	Preis SMALLMONEY,
 	DatumUhrzeit SMALLDATETIME, 
 	AbrechnungDatumUhrzeit SMALLDATETIME DEFAULT GETDATE());
@@ -150,6 +151,7 @@ INSERT INTO dbo.Verzehr_History
     FK_Persohnen,
     FullName,
     FK_Produkt,
+	Produkt,
     Preis,
     DatumUhrzeit
 )
@@ -157,34 +159,20 @@ SELECT v.id,
        v.FK_Persohnen,
 	   p.Vname + ' ' + p.Nname AS FullName,
        v.FK_Produkt,
+	   prd.Produkt,
        v.Preis,
        v.DatumUhrzeit
 FROM dbo.Verzehr AS v LEFT OUTER JOIN dbo.Persohnen AS p
-ON v.FK_Persohnen = p.id
+ON v.FK_Persohnen = p.id LEFT OUTER JOIN dbo.Produkte AS prd
+on v.FK_Produkt = prd.Id;
 
 TRUNCATE TABLE dbo.Verzehr;
 GO
 
----------------------------
-
-SELECT v.Id,
-       -- v.FK_Persohnen,
-	   p.Vname,
-	   p.Nname,
-       -- v.FK_Produkt,
-	   pd.Produkt,
-	   -- pd.Preis,
-       v.Preis,
-       v.DatumUhrzeit
-FROM dbo.Verzehr AS v
-LEFT OUTER JOIN dbo.Persohnen AS p
-ON v.FK_Persohnen = p.Id
-LEFT OUTER JOIN Produkte AS pd
-ON v.FK_Produkt = pd.Id;
-GO
-
 -----------------------------------
 
+select * FROM dbo.Persohnen;
+SELECT * FROM dbo.Produkte;
 SELECT * FROM dbo.Verzehr;
 SELECT * FROM dbo.Konto;
 SELECT * FROM dbo.Verzehr_History;
@@ -193,7 +181,12 @@ SELECT * FROM dbo.Verzehr_History;
 
 EXEC dbo.usp_abrechnung;
 
+-----------------------------------
+
+SELECT '------------------- Nach Abrechnung -------------------'
+
 SELECT * FROM dbo.Verzehr;
 SELECT * FROM dbo.Konto;
 SELECT * FROM dbo.Verzehr_History;
+GO
 
