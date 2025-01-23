@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VereinsApp.Services", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VereinsApp.Data", "src\VereinsApp.Data\VereinsApp.Data.csproj", "{5E04F437-2C25-4D4F-A72B-584C87BF16C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VereinsApp.Core", "VereinsApp.Core\VereinsApp.Core.csproj", "{FB5FEC0F-9A7B-464C-B4F3-8C8E7EAAFF72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VereinsApp.Core", "src\VereinsApp.Core\VereinsApp.Core.csproj", "{FB5FEC0F-9A7B-464C-B4F3-8C8E7EAAFF72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VereinsApp.Web.Tests", "test\VereinsApp.Web.Tests\VereinsApp.Web.Tests.csproj", "{D5DE32F2-A84A-41D7-9510-44E562E30760}"
 EndProject
